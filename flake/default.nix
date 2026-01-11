@@ -7,10 +7,14 @@
 in {
   imports = [inputs.flake-parts.flakeModules.partitions];
 
-  flake.flakeModule = {
-    config = {
-      _module.args = {inherit dotlib;};
-      perSystem.config._module.args = {inherit dotlib;};
+  flake = {
+    lib = {inherit (dotlib) fileset;};
+
+    flakeModule = {
+      config = {
+        _module.args = {inherit dotlib;};
+        perSystem.config._module.args = {inherit dotlib;};
+      };
     };
   };
 
