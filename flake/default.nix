@@ -6,7 +6,13 @@
   dotlib = import "${inputs.self}/lib" lib;
 in {
   imports = [inputs.flake-parts.flakeModules.partitions];
-  flake = {inherit dotlib;};
+
+  flake.flakeModule = {
+    config = {
+      _module.args = {inherit dotlib;};
+      perSystem.config._module.args = {inherit dotlib;};
+    };
+  };
 
   partitions.dev = {
     module = ./dev;
