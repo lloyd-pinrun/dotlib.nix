@@ -9,7 +9,7 @@
     option = type: description: rest:
       lib.pipe {inherit type description;} [
         lib.singleton
-        (lib.concat (lib.optional (builtins.isAttrs rest) rest))
+        (lib.trivial.concat (lib.optional (builtins.isAttrs rest) rest))
         lib.mergeAttrsList
         lib.mkOption
       ];
@@ -75,8 +75,8 @@
           option (wrapper type) description (
             lib.pipe defaults [
               lib.singleton
-              (lib.concat (lib.optional (builtins.isAttrs rest) rest))
-              (lib.concat (lib.optional (builtins.isAttrs _rest) _rest))
+              (lib.trivial.concat (lib.optional (builtins.isAttrs rest) rest))
+              (lib.trivial.concat (lib.optional (builtins.isAttrs _rest) _rest))
               lib.mergeAttrsList
             ]
           );

@@ -13,12 +13,13 @@ lib: let
   in {
     # keep-sorted start
     attrsets = importLib ./attrsets.nix;
-    fileset = importLib ./options.nix;
+    fileset = importLib ./fileset.nix;
     filesystem = importLib ./filesystem.nix;
     formats = importLib ./formats.nix;
     lists = importLib ./lists.nix;
+    math = importLib ./math.nix;
     options = importLib ./options.nix;
-    strings = importLib ./lists.nix;
+    strings = importLib ./strings.nix;
     trivial = importLib ./trivial.nix;
     # keep-sorted end
 

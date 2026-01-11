@@ -1,4 +1,4 @@
-{lib}: let
+{lib, ...}: let
   lists = rec {
     /**
     Add the given `item` to the **end** of a `list`.
@@ -24,7 +24,7 @@
       _list = lib.lists.toList list;
       _item = lib.lists.toList item;
     in
-      lib.lists.concat _list _item;
+      lib.trivial.concat _list _item;
 
     /**
     Add the given `item` to the **start** of a `list`.

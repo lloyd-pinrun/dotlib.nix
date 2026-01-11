@@ -1,4 +1,4 @@
-lib: let
+{lib, ...}: let
   trivial = {
     get = attrs: str: attrs.${str};
     pipe' = lib.flip lib.pipe;

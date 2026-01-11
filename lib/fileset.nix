@@ -1,4 +1,4 @@
-{lib}: let
+{lib, ...}: let
   onlyDirs = builtins.filter (path: lib.filesystem.pathIsDirectory path);
   onlyFiles = builtins.filter (path: lib.filesystem.pathIsRegularFile path);
   topLevelPaths = paths: builtins.filter (path: ! (builtins.any (_path: _path != path && lib.strings.hasPrefix (toString _path + "/") (toString path)) paths)) paths;

@@ -11,7 +11,7 @@
     capitalize :: String -> String
     ```
     */
-    capitalize = str: upcase (dotlib.strings.first str) + dotlib.strings.rest str;
+    capitalize = str: upcase (first str) + rest str;
 
     /**
     Converts all characters in the given string to lowercase. Alias of `nixpkgs.lib.toLower`.
